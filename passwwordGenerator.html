@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="passwordGenerator.css">
+</head>
+
+<body>
+<div id="scene">
+        <canvas id="bg"></canvas>
+        <div id="orb"></div>
+        <div class="card">
+            <h2>Password Generator App</h2>
+            <div class="pw-box">
+
+                <span id="pwText" class="empty"> Click Generate</span>   
+                    <button class="copy-btn" onclick="copyPw()" title="Copy Password">
+                        <svg width="18" height="18" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4"/>
+                        </svg>         
+                    </button>
+            </div>
+
+            <!--Strength Bar-->
+                    <div class="strength-bar">
+                        <div class="seg" id="s0"></div>
+                        <div class="seg" id="s1"></div>
+                        <div class="seg" id="s2"></div>
+                        <div class="seg" id="s3"></div>
+                    </div>
+                
+                    <!--Options --- upercase, lowercase, numbers, symbols, length-->
+                <div class="options">
+                    <div class="option-row">
+                        <label>Length</label>
+                        <input type="range" id="lenRange" min="6" max="32" value="12"
+                        oninput="document.getElementById('lenVal').textContent = this.value">
+                        <span class="len-val" id="lenVal">12</span>
+                    </div>
+                        <div class="option-row">
+                            <label>Uppercase (A-Z)</label>
+                            <input type="checkbox" id="useUpper" checked>
+                        </div>
+                        <div class="option-row">
+                            <label>Numbers (0-9)</label>
+                            <input type="checkbox" id="useNums" checked>
+                        </div>
+                        <div class="option-row">
+                            <label>Symbols (!@#$%)</label>
+                            <input type="checkbox" id="useSyms" checked>
+                        </div>
+                    <button class="gen-btn" onclick="generate()"> Generate Password</button>
+                    <div id="toast">Copied to clipboard!</div>
+                </div>
+            </div>
+
+</div>
+    
+
+
+
+
+    <script src="passwordGen.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+p1 {
+    text-align: left;
+    color: rgba(255,255,255,0.7);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    text-align: center; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+/* Hub is the container that holds all the cards */
+.hub{
+    max-width: 900px;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+button {
+    background-color: #302b63;
+    border-radius: 16px;
+
+}
+p {
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, border-color 0.2s;
+    display: block;
+    margin: 0 auto 1rem;
+    min-width: 250px;
+    min-height: 250px;
+}
+.card:hover {
+    transform: translateY(-6px) scale(1.05);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.tag {
+display:inline-block;
+font-size: 11px;
+font-weight:500;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+padding: 3px 10px;
+border-radius: 20px;
+margin-bottom: 0.75rem;
+}
+.tag-tool{
+    background: rgba(109,40,217,0.2);   /* Purple with 20% opacity */
+    color: #c4b5fd; /* Light purple text */
+}
+.tag-experiment{
+    background: rgba(16,185,129,0.2);   /* Green with 20% opacity */
+    color: #6ee7b7; /* Light green text */
+}
+
+/*Title for card*/
+.card h3 {
+    font-size: 1.1rem;  /* slightly bigger than body*/
+   font-weight: 600;
+   color: #ffff;
+   margin-bottom: 0.4rem;
+}
+/*Description for card*/
+.card p {
+    font-size: 0.875rem;    /* smaller than body text */
+    color: rgba(255,255,255,0.45); /* lighter white for description 45% opacity*/
+    line-height: 1.5;
+}
+
+.card-arrow{
+    margin-top: 1.25rem;/* space between description and arrow */
+    font-size: 1.2rem; /* slightly bigger arrow*/
+    color: rgba(255,255,255,0.5); /* lighter white for arrow 50% opacity*/
+    transition: color 0.2s, transform 0.2s;/* Animate color and position on hover */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+}
+.card:hover .card-arrow {
+    color: rgba(0, 0, 0, 0.8); /* Change arrow color to a light purple on hover */ 
+   transform: translateX(4px); /* Move arrow slightly to the right on hover */
+}
